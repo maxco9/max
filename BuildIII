@@ -1,0 +1,200 @@
+var x;
+var y;
+var c = 0;
+var r = 10;
+var xdir = [];
+var ydir = [];
+var gravity = .05;
+var speed =3;
+var mode = 1;
+let button1;
+let button2;
+let button3;
+
+
+function setup() { 
+  createCanvas(500, 500);
+button1 = createButton('1');
+button1.position(20, 20);
+button2 = createButton('2');
+button2.position(40, 20);
+button3 = createButton('3');
+button3.position(62, 20);
+
+if (button1.mousePressed(change1)){ 
+	x = 20;
+  y= 10;
+  
+}
+if (button2.mousePressed(change2));{
+	x = 20;
+  y= 10;
+}
+if (button3.mousePressed(change3));{
+	x = 20;
+  y= 10;
+}
+
+function change1 (){
+  c=1;
+  r=10;
+  x=20;
+  y=10;
+}
+function change2 (){
+  c=5;
+  r=20;
+  x=25;
+  y=20;
+  gravity =.075
+}
+function change3 (){
+  c=10;
+  r=40;
+  x=40;
+  y=20;
+  gravity=.1
+}
+}
+ function draw() { 
+  background(220);
+  ellipse(x, y, r*2);
+  noFill();
+stroke(255,0,0);
+curve(250, -1000, 0, 325, 500, 325, 250, -1000);
+if ((c < 4)&&(c > 0)){
+  if ( mode == 1 ) {
+   y = y + speed;
+   speed = speed + gravity;
+  }
+  if ((y > 350)&&(y < 413)){
+      mode = 2;
+      x = x + speed;
+      y = 350 + gravity;
+      gravity= gravity + 1;   
+  }
+   if ((y > 413)&&(y < 460)){
+      mode = 3;
+      x = x - speed;
+      y = 350 + gravity;
+      gravity = gravity+1;
+   }
+  if ((y > 460)&&(y < 480)){
+      mode = 4;
+      x = x + speed;
+      y = 350 + gravity;
+      gravity = gravity+1
+   }
+  if ((y > 480)&&(y < 481)){
+      mode = 5;
+      x = x - speed;
+      y = 350 + gravity;
+      gravity = gravity+1
+   }
+  if (y > 481){
+      mode = 6;
+      x = 252;
+      y = 481; 
+  }
+   if ( y >= height ) {
+    speed = 1-speed;
+
+   
+//end of change 1 start of change 2  
+
+   }
+  }
+ if ((c < 9)&&(c > 4)){
+  if ( mode == 1 ) {
+   y = y + speed;
+   speed = speed + gravity;
+  }
+  if ((y > 330)&&(y < 387)){
+      mode = 2;
+      x = x + speed;
+      y = 330 + gravity;
+      gravity= gravity + 1;   
+  }
+   if ((y > 387)&&(y < 435)){
+      mode = 3;
+      x = x - speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+   }
+  if ((y > 435)&&(y < 465)){
+      mode = 4;
+      x = x + speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+   }
+  if ((y > 465)&&(y < 468)){
+      mode = 5;
+      x = x - speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+  }
+    if ((y > 468 )&&(y < 470)){
+      mode = 6;
+      x = x + speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+   }
+   if ((y > 469)&&(y < 471)){
+      mode = 7;
+      x = x - speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+   }
+  if (y > 470){
+      mode = 8;
+      x = 250;
+      y = 470; 
+  }
+   if ( y >= height ) {
+    speed = 1.25-speed;
+
+   
+  //change 3
+
+   }
+  }
+   
+ if ((c > 9 )){
+  if ( mode == 1 ) {
+   y = y + speed;
+   speed = speed + gravity;
+  }
+  if ((y > 330)&&(y < 376)){
+      mode = 2;
+      x = x + speed;
+      y = 330 + gravity;
+      gravity= gravity + 1;   
+  }
+   if ((y > 376)&&(y < 415)){
+      mode = 3;
+      x = x - speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+   }
+  if ((y > 415)&&(y < 440)){
+      mode = 4;
+      x = x + speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+   }
+if ((y > 440)&&(y < 450)){
+      mode = 5;
+      x = x - speed;
+      y = 330 + gravity;
+      gravity = gravity+1;
+  if (y > 450){
+      mode = 6;
+      x = 250;
+      y = 450; 
+  }
+   if ( y >= height ) {
+    speed = 1.5-speed;
+   }
+ }
+ }
+ }
